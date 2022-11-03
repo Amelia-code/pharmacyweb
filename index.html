@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <meta charset="utf-8">
+    <head>
+    <title> API wed </title>
+    
+    <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body style="overflow-x:hidden; overflow-y:auto;">
+        <script src="js/jquery.js"></script>
+        <div id = "wrap">
+         <header>
+            <div id = "top_area">
+                <h1><a href="index.html">
+                    API wed 
+                    </a> 
+                </h1>
+                
+            
+
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href ="#"> main </a>
+                        
+                    </li>
+                
+                
+                    <li>
+                        <a href ="#"> menu </a>
+                        
+                    </li>
+                
+            
+                    <li>
+                        <a href ="#"> menu1 </a>
+                       
+                    </li>
+                
+                
+                    <li>
+                        <a href ="#"> menu2 </a>
+                       
+                            
+                    
+                    </li>
+                </ul>
+            </nav>
+         </header>
+
+         <article id ="apiweb">
+                
+
+                </article>
+
+            <footer>
+            
+            </footer>
+         </div>
+        <div id="map"></div>
+       <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=	bfaa4aa1bf194fc7519ad297815a70fb"></script>
+        <script>
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667),
+                level: 3
+            };
+    
+            var map = new kakao.maps.Map(container, options);
+        </script>
+
+     </body>  
+</html>

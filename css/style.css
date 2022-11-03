@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin: 0; padding: 0; }
+li{list-style: none; }
+a{text-decoration: none; color: #333;}
+
+body {
+    font-family: Arial;
+}
+
+#wrap{width: 100%;}
+
+header{
+    width: 100%;
+    height: 252px;
+   /* background-color: aqua;*/
+
+}
+
+#top_area {
+    width: 100%;
+    height: 205px;
+    /* background-color: blueviolet;*/
+    margin: 0 auto;
+}
+
+#top_area h1{
+    font-size: 48px;
+    text-align: center; 
+    padding-top: 60px;
+    
+}
+#top_area p{
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold ;
+
+}
+
+header nav{
+    width: 100%;
+    height: 45px;
+    background-color: cadetblue;
+    border-bottom:2px solid #fff;
+}
+
+nav > ul {
+    width: 100%;
+    height: 45px;
+    margin:0 auto;
+    padding-left: 33px;
+    /*background-color:#ccc; */
+}
+
+nav > ul > li {
+    height: 45px;
+    float:left;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: bold ;
+   
+}
+
+nav > ul > li > a {
+	padding:0 17px;
+    color: #fff;
+}
+
+#apiweb{
+    
+    height: 900px;
+    /* background-color: antiquewhite; */
+
+}
+
+
+#map{
+        width: 700px;
+        height: 500px;
+        position: relative;
+        right: 100 px;
+        bottom: 800px;
+        margin: 0 auto;
+}
