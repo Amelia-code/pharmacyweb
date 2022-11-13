@@ -357,15 +357,15 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.66663705, 127.0576358)
     },
     {
-        content: '<div class="info-title">365정화약국</h2></br>전화번호:02-937-2288 </br> 주소: 서울특별시 노원구 상계로 59, 동익빌딩 1층 7,8호 (상계동) </br> 엽업시간 </br> 매일: 9시 00분~ 23시 00분  </div>',
+        content: '<div class="info-title"><h2>365정화약국</h2></br>전화번호:02-937-2288 </br> 주소: 서울특별시 노원구 상계로 59, 동익빌딩 1층 7,8호 (상계동) </br> 엽업시간 </br> 매일: 9시 00분~ 23시 00분  </div>',
         latlng: new kakao.maps.LatLng(37.65616028, 127.0615152)
     },
     {
-        content: '<div class="info-title">i튼튼약국</h2></br>전화번호:02-972-0246</br>주소: 서울특별시 노원구 동일로 1059, (공릉동) </br>영업시간</br>평일:09시 00분 ~ 21시 00분 </br> 주말 09시 00분 ~ 16시 00분 </br> 공휴일휴무</div>',
+        content: '<div class="info-title"><h2>i튼튼약국</h2></br>전화번호:02-972-0246</br>주소: 서울특별시 노원구 동일로 1059, (공릉동) </br>영업시간</br>평일:09시 00분 ~ 21시 00분 </br> 주말 09시 00분 ~ 16시 00분 </br> 공휴일휴무</div>',
         latlng: new kakao.maps.LatLng(37.62454453, 127.0729329)
     },
     {
-        content: '<div class="info-title">t<h2>he사랑약국</h2></br>전화번호:02-933-3678</br> 주소:서울특별시 노원구 덕릉로 662 </br> (중계동, 주공3단지아파트) </br>영업시간</br> 평일: 09시 00분 ~ 20시 00분</br> 토요일:09시 00분 ~ 17시 00분 <br> 일요일,공휴일 휴무</div>',
+        content: '<div class="info-title"><h2>the사랑약국</h2></br>전화번호:02-933-3678</br> 주소:서울특별시 노원구 덕릉로 662 </br> (중계동, 주공3단지아파트) </br>영업시간</br> 평일: 09시 00분 ~ 20시 00분</br> 토요일:09시 00분 ~ 17시 00분 <br> 일요일,공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.65609213, 127.0749674)
     },
     {
