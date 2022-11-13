@@ -118,6 +118,7 @@ nav > ul > li > a {
     text-align: left;
     width: fit-content;
     height: 180px;
+    width: 460px;
     line-height:20px;
     border-radius:4px;
     padding:20px 10px 10px 10px;
@@ -131,7 +132,7 @@ nav > ul > li > a {
     height: 70px;
     position: absolute;
     top: 370px;
-    left: 260px;
+    left: 259px;
     text-align: center;
     border: 0;
     outline: 0;
