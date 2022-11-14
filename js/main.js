@@ -77,7 +77,7 @@ function getCurrentPosBtn(onClickW){
          latlng: new kakao.maps.LatLng(37.5380514, 127.123789)
      }, 
      {
-        content: '<div class="info-title"><h2>7형제약국</h2></br>전화번호:02-478-9855</br>주소:서울특별시 강동구 진황도로 179, 1층</br>(둔촌동)</br>영업시간</br>월~토:09시00분~22시00분</br>일요일 공휴일 휴무</div>',
+        content: '<div class="info-title"><h2>7형제약국</h2></br>전화번호:02-478-9855</br>주소:서울특별시 강동구 진황도로 179, 1층 (둔촌동)</br>영업시간</br>월~토:09시00분~22시00분</br>일요일 공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.52939624, 127.1429696)
     },
     {
@@ -221,11 +221,11 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.48162829, 126.953733)
     },
     {
-        content: '<div class="info-title"><h2>강원약국</h2></br>전화번호:02-874-4575</br> 주소: 서울특별시 관악구 대학길 36, </br>(신림동)</br>영업시간</br>평일,토요일,공휴일:09시 00분 ~ 21시 30분</br>일요일휴무 </div>',
+        content: '<div class="info-title"><h2>강원약국</h2></br>전화번호:02-874-4575</br> 주소: 서울특별시 관악구 대학길 36, (신림동)</br>영업시간</br>평일,토요일,공휴일:09시 00분 ~ 21시 30분</br>일요일휴무 </div>',
         latlng: new kakao.maps.LatLng(37.46912466, 126.9375731)
     },
     {
-        content: '<div class="info-title"><h2>건강약국</h2></br>전화번호:02-855-2883</br>주소:서울특별시 관악구 남부순환로 1539, </br>(신림동)</br>영업시간</br>평일,토요일: 09시 00분 ~ 22시 00분</br>일요일,공휴일 휴무</div>',
+        content: '<div class="info-title"><h2>건강약국</h2></br>전화번호:02-855-2883</br>주소:서울특별시 관악구 남부순환로 1539,(신림동)</br>영업시간</br>평일,토요일: 09시 00분 ~ 22시 00분</br>일요일,공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.48340063, 126.9215875)
     },
     {
@@ -237,11 +237,11 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.55796921, 127.0876806)
     },
     {
-        content: '<div class="info-title"><h2>강변그랜드약국</h2></br>전화번호:02-447-4842</br>주소:서울특별시 광진구 광나루로56길 63 </br> (구의동) 프라임프라자상가 1층</br>영업시간</br>평일:08시 30분 ~ 21시 00분</br>주말:08시 30분 ~ 18시 00분</br> 공휴일 휴무 </d<iv>',
+        content: '<div class="info-title"><h2>강변그랜드약국</h2></br>전화번호:02-447-4842</br>주소:서울특별시 광진구 광나루로56길 63  (구의동) 프라임프라자상가 1층</br>영업시간</br>평일:08시 30분 ~ 21시 00분</br>주말:08시 30분 ~ 18시 00분</br> 공휴일 휴무 </d<iv>',
         latlng: new kakao.maps.LatLng(37.53678915, 127.0961598)
     },
     {
-        content: '<div class="info-title"><h2>건대가온약국</h2></br>전화번호:02-453-4669</br>주소: 서울특별시 광진구 광나루로 410, 105호 </br> (화양동, KCC파크타운)</br>영업시간</br>평일,주말,공휴일:09시 00분 ~ 23시 00분</div>',
+        content: '<div class="info-title"><h2>건대가온약국</h2></br>전화번호:02-453-4669</br>주소: 서울특별시 광진구 광나루로 410, 105호 (화양동, KCC파크타운)</br>영업시간</br>평일,주말,공휴일:09시 00분 ~ 23시 00분</div>',
         latlng: new kakao.maps.LatLng(37.54656048, 127.0750477)
     },
     {
@@ -249,7 +249,7 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.53973055, 127.0702007)
     },
     {
-        content: '<div class="info-title"><h2>건대역약국</h2></br>전화번호:02-497-4337</br>주소:서울특별시 광진구 아차산로 218 </br> (자양동)</br>영업시간</br>평일,토요일:08시 00분 ~ 22시 00분</br>일요일:10시 00분 ~ 17시 00분</br>공휴일 휴무</div>',
+        content: '<div class="info-title"><h2>건대역약국</h2></br>전화번호:02-497-4337</br>주소:서울특별시 광진구 아차산로 218  (자양동)</br>영업시간</br>평일,토요일:08시 00분 ~ 22시 00분</br>일요일:10시 00분 ~ 17시 00분</br>공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.54075634, 127.0674076)
     },
     {
@@ -261,19 +261,19 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.54084161, 127.0710464)
     },
     {
-        content: '<div class="info-title"><h2>고약국</h2></br>전화번호:02-457-6159</br>주소:서울특별시 광진구 구의로 7, 1층 2호 </br>(구의동)</br>영업시간</br>평일,주말,공휴일:13시 00분 ~ 21시 00분</div>',
+        content: '<div class="info-title"><h2>고약국</h2></br>전화번호:02-457-6159</br>주소:서울특별시 광진구 구의로 7, 1층 2호 (구의동)</br>영업시간</br>평일,주말,공휴일:13시 00분 ~ 21시 00분</div>',
         latlng: new kakao.maps.LatLng(37.53860554, 127.0890693)
     },
     {
-        content: '<div class="info-title"><h2>광제사약국</h2></br>전화번호:02-464-1832</br>주소:서울특별시 광진구 면목로 130, 1층 </br>(중곡동)</br>영업시간</br>평일:09시 00분 ~ 21시 00분</br>토요일09시 00분 ~ 20시 00분 </br> 일요일 공휴일 휴무</div>',
+        content: '<div class="info-title"><h2>광제사약국</h2></br>전화번호:02-464-1832</br>주소:서울특별시 광진구 면목로 130, 1층 (중곡동)</br>영업시간</br>평일:09시 00분 ~ 21시 00분</br>토요일09시 00분 ~ 20시 00분 </br> 일요일 공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.56498215, 127.0809199)
     },
     {
-        content: '<div class="info-title"><h2>광진백화점약국</h2></br>전화번호:02-457-7873</br>주소: 서울특별시 광진구 자양로 43 </br>(자양동)</br>영업시간</br>평일:09시 00분 ~ 18시 00분</br>토요일 : 09시 00분 ~ 13시 00분</br>일요일,공휴일 휴무 </div>',
+        content: '<div class="info-title"><h2>광진백화점약국</h2></br>전화번호:02-457-7873</br>주소: 서울특별시 광진구 자양로 43 (자양동)</br>영업시간</br>평일:09시 00분 ~ 18시 00분</br>토요일 : 09시 00분 ~ 13시 00분</br>일요일,공휴일 휴무 </div>',
         latlng: new kakao.maps.LatLng(37.53163161, 127.0853421)
     },
     {
-        content: '<div class="info-title"><h2>1번약국</h2></br>전화번호:02-851-1155</br>주소: 서울특별시 구로구 구로동로 132 </br>(구로동)</br> 영업시간</br> 평일:08시 30분 ~ 19시 00분</br>토요일:토요일 : 09시 00분 ~ 17시 00분<br>일요일,공휴일 휴무</div>',
+        content: '<div class="info-title"><h2>1번약국</h2></br>전화번호:02-851-1155</br>주소: 서울특별시 구로구 구로동로 132 (구로동)</br> 영업시간</br> 평일:08시 30분 ~ 19시 00분</br>토요일:토요일 : 09시 00분 ~ 17시 00분<br>일요일,공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.49042029, 126.884202)
     },
     {
@@ -281,7 +281,7 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.49399577, 126.8582551)
     },
     {
-        content: '<div class="info-title"><h2>505약국</h2></br>전화번호:02-856-5050 </br> 주소: 서울특별시 구로구 구로동로42길 58, </br>(구로동)</br>영업시간</br> 평일,토요일: 08시 30분 ~ 23시 30분 일요일: 09시 00분 ~ 22시 30분 </br> </div>',
+        content: '<div class="info-title"><h2>505약국</h2></br>전화번호:02-856-5050 </br> 주소: 서울특별시 구로구 구로동로42길 58,(구로동)</br>영업시간</br> 평일,토요일: 08시 30분 ~ 23시 30분 일요일: 09시 00분 ~ 22시 30분 </br> </div>',
         latlng: new kakao.maps.LatLng(37.49817617, 126.8842081)
     },
     {
