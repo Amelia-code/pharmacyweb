@@ -1,15 +1,13 @@
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+    mapOption = {
+        center: new kakao.maps.LatLng(37.5170977988592, 127.04704243875862), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };
 
-
-  var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-     mapOption = { 
-         center: new kakao.maps.LatLng(37.5170977988592, 127.04704243875862), // 지도의 중심좌표
-         level: 4 // 지도의 확대 레벨
-     };
- 
- var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
- function locationLoadSuccess(pos){
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+function locationLoadSuccess(pos) {
     // 현재 위치 받아오기
-    var currentPos = new kakao.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
+    var currentPos = new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
 
     // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
     map.panTo(currentPos);
@@ -24,59 +22,58 @@
     marker.setMap(map);
 };
 
-function locationLoadError(pos){
+function locationLoadError(pos) {
     alert('위치 정보를 가져오는데 실패했습니다.');
 };
 
 // 위치 가져오기 버튼 클릭시
-function getCurrentPosBtn(onClickW){
-    navigator.geolocation.getCurrentPosition(locationLoadSuccess,locationLoadError);
+function getCurrentPosBtn(onClickW) {
+    navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
 };
-  
- // 마커를 표시할 위치와 title 객체 배열입니다 
- var positions = [
-     {
-         content: '<div class="info-title"><h2>100세건강약국</h2></br>전화번호: 02-445-1460</br>주소:서울특별시 강남구 헌릉로571길 7, 강남레체 1층 101호</br>(세곡동)</br>영업시간</br>평일:09시 00분 ~ 20시 00분</br>토요일:09시 00분 ~ 17시 00분</br>일요일 공휴일 휴무</div>', 
-         latlng: new kakao.maps.LatLng(37.46604487, 127.1013669),
-         
-     },
-     {
-         content: '<div class="info-title"><h2>1층엔약국</h2></br>전화번호:02-518-3014</br>주소:서울특별시 강남구 강남대로 624, ICT TOWER 1층(신사동)</br>영업시간</br>평일8시00분~20시00분</br>토요일:09시00분~18시00분</br>일요일 공휴일 휴무</div>', 
-         latlng: new kakao.maps.LatLng(37.5174747, 127.0195102)
-     },
-     {
-         content: '<div class="info-title"><h2>5층약국</h2></br>전화번호:02-508-5030</br>주소:서울특별시 강남구 선릉로 324, SH타워 5층 (대치동)</br>영업시간</br>월,수:8시30분~19시30분 화,목,금:8시30분~ 20시30분</br>토요일 8시 30분~16시 00분 일요일: 08시 30분~ 13시 30분</br>공휴일 휴무</div>', 
-         latlng: new kakao.maps.LatLng(37.50562628, 127.0552145)
-     },
-     {
-         content: '<div class="info-title"><h2>7층애약국</h2></br>전화번호:02-567-0409</br>주소:서울특별시 강남구 테헤란로78길 8, 7층 일부 (대치동, 현빌딩)</br>영업시간</br>평일:10사00분~19시00분</br>주말휴무,공휴일 휴무  </div>',
-         latlng: new kakao.maps.LatLng(37.489263, 127.0818109)
-     },
-     {
-         content: '<div class="info-title"><h2>E-삼성약국</h2></br>전화번호:02-3412-1254 </br> 주소: 서울특별시 강남구 일원로 53 (일원동)소림빌딩 1층 </br>영업시간</br>평일:09시 00분~19시 00분 </br>토요일 09시 00분~13시 00분</br>일요일,공휴일 휴무</div>',
-         latlng: new kakao.maps.LatLng(37.489263, 127.0818109)
-     },
-     {
-         content: '<div class="info-title"><h2>가로수길약국</h2></br>전화번호:02-518-4201</br>주소:서울특별시 강남구 압구정로 108  </br>(신사동) 1층 7호</br>영업시간</br>평일:09시00분~20시00분<br> 토요일:09시 30분~18시 00분 </br> 일요일,공휴일 휴무 </div>',
-         latlng: new kakao.maps.LatLng(37.52291865, 127.0205796)
-     },
-     {
-         content: '<div class="info-title"><h2>가온약국</h2></br>전화번호: 02-545-0546</br> 주소:서울특별시 강남구 학동로 413, 청담빌딩 2층 (청담동)</br>영업시간</br>평일:08시 30분 ~ 18시 30분</br>토요일:08시 30분 ~ 14시 00분</br>일요일,공휴일 휴무</div>',
-         latlng: new kakao.maps.LatLng(37.51817613, 127.0451744)
-     },
-     {
-         content: '<div class="info-title"><h2>감마약국</h2></br>전화번호:02-547-8990</br>주소:서울특별시 강남구 압구정로 336 (신사동)</br>영업시간</br>평일:09시 00분~21시00분</br>토요일 09시 00분 ~ 20시 00분</br>일요일,공휴일 휴무 </div>',
-         latlng: new kakao.maps.LatLng(37.52802105, 127.0384784)
-     },
-     {
-         content: '<div class="info-title"><h2>강남구청역약국</h2></br>전화번호:02-511-6252</br>주소:서울특별시 강남구 학동로 지하 346, 강남구청역 B1층 111호 </br> (삼성동)</br>영업시간</br>평일:08시 00분 ~ 20시 00분 </br>주말:09시 00분~ 17시 00분</br>공휴일 휴무 </div>',
-         latlng: new kakao.maps.LatLng(37.51718924, 127.0413014)
-     },
-     {
-         content: '<div class="info-title"><h2>1층천호약국</h2></br>전화번호:02-478-1178</br>주소:서울특별시 강동구 천호대로 1006, 브라운스톤천호 105호 </br>(성내동) </br>영업시간 </br> 평일:10시 00분 ~ 19시 30분 </br> 토요일: 10시 00분~15시 00분 </br>일요일,공휴일 휴무 </div>',
-         latlng: new kakao.maps.LatLng(37.5380514, 127.123789)
-     }, 
-     {
+
+// 마커를 표시할 위치와 title 객체 배열입니다 
+var positions = [{
+        content: '<div class="info-title"><h2>100세건강약국</h2></br>전화번호: 02-445-1460</br>주소:서울특별시 강남구 헌릉로571길 7, 강남레체 1층 101호</br>(세곡동)</br>영업시간</br>평일:09시 00분 ~ 20시 00분</br>토요일:09시 00분 ~ 17시 00분</br>일요일 공휴일 휴무</div>',
+        latlng: new kakao.maps.LatLng(37.46604487, 127.1013669),
+
+    },
+    {
+        content: '<div class="info-title"><h2>1층엔약국</h2></br>전화번호:02-518-3014</br>주소:서울특별시 강남구 강남대로 624, ICT TOWER 1층(신사동)</br>영업시간</br>평일8시00분~20시00분</br>토요일:09시00분~18시00분</br>일요일 공휴일 휴무</div>',
+        latlng: new kakao.maps.LatLng(37.5174747, 127.0195102)
+    },
+    {
+        content: '<div class="info-title"><h2>5층약국</h2></br>전화번호:02-508-5030</br>주소:서울특별시 강남구 선릉로 324, SH타워 5층 (대치동)</br>영업시간</br>월,수:8시30분~19시30분 화,목,금:8시30분~ 20시30분</br>토요일 8시 30분~16시 00분 일요일: 08시 30분~ 13시 30분</br>공휴일 휴무</div>',
+        latlng: new kakao.maps.LatLng(37.50562628, 127.0552145)
+    },
+    {
+        content: '<div class="info-title"><h2>7층애약국</h2></br>전화번호:02-567-0409</br>주소:서울특별시 강남구 테헤란로78길 8, 7층 일부 (대치동, 현빌딩)</br>영업시간</br>평일:10사00분~19시00분</br>주말휴무,공휴일 휴무  </div>',
+        latlng: new kakao.maps.LatLng(37.489263, 127.0818109)
+    },
+    {
+        content: '<div class="info-title"><h2>E-삼성약국</h2></br>전화번호:02-3412-1254 </br> 주소: 서울특별시 강남구 일원로 53 (일원동)소림빌딩 1층 </br>영업시간</br>평일:09시 00분~19시 00분 </br>토요일 09시 00분~13시 00분</br>일요일,공휴일 휴무</div>',
+        latlng: new kakao.maps.LatLng(37.489263, 127.0818109)
+    },
+    {
+        content: '<div class="info-title"><h2>가로수길약국</h2></br>전화번호:02-518-4201</br>주소:서울특별시 강남구 압구정로 108  </br>(신사동) 1층 7호</br>영업시간</br>평일:09시00분~20시00분<br> 토요일:09시 30분~18시 00분 </br> 일요일,공휴일 휴무 </div>',
+        latlng: new kakao.maps.LatLng(37.52291865, 127.0205796)
+    },
+    {
+        content: '<div class="info-title"><h2>가온약국</h2></br>전화번호: 02-545-0546</br> 주소:서울특별시 강남구 학동로 413, 청담빌딩 2층 (청담동)</br>영업시간</br>평일:08시 30분 ~ 18시 30분</br>토요일:08시 30분 ~ 14시 00분</br>일요일,공휴일 휴무</div>',
+        latlng: new kakao.maps.LatLng(37.51817613, 127.0451744)
+    },
+    {
+        content: '<div class="info-title"><h2>감마약국</h2></br>전화번호:02-547-8990</br>주소:서울특별시 강남구 압구정로 336 (신사동)</br>영업시간</br>평일:09시 00분~21시00분</br>토요일 09시 00분 ~ 20시 00분</br>일요일,공휴일 휴무 </div>',
+        latlng: new kakao.maps.LatLng(37.52802105, 127.0384784)
+    },
+    {
+        content: '<div class="info-title"><h2>강남구청역약국</h2></br>전화번호:02-511-6252</br>주소:서울특별시 강남구 학동로 지하 346, 강남구청역 B1층 111호 </br> (삼성동)</br>영업시간</br>평일:08시 00분 ~ 20시 00분 </br>주말:09시 00분~ 17시 00분</br>공휴일 휴무 </div>',
+        latlng: new kakao.maps.LatLng(37.51718924, 127.0413014)
+    },
+    {
+        content: '<div class="info-title"><h2>1층천호약국</h2></br>전화번호:02-478-1178</br>주소:서울특별시 강동구 천호대로 1006, 브라운스톤천호 105호 </br>(성내동) </br>영업시간 </br> 평일:10시 00분 ~ 19시 30분 </br> 토요일: 10시 00분~15시 00분 </br>일요일,공휴일 휴무 </div>',
+        latlng: new kakao.maps.LatLng(37.5380514, 127.123789)
+    },
+    {
         content: '<div class="info-title"><h2>7형제약국</h2></br>전화번호:02-478-9855</br>주소:서울특별시 강동구 진황도로 179, 1층 (둔촌동)</br>영업시간</br>월~토:09시00분~22시00분</br>일요일 공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.52939624, 127.1429696)
     },
@@ -131,7 +128,7 @@ function getCurrentPosBtn(onClickW){
     {
         content: '<div class="info-title"><h2>강북김약국</h2></br>전화번호:	02-980-1717</br>주소: 서울특별시 강북구 도봉로49길 8, 1층 (미아동)</br>영업시간 </br> 평일: 09시 00분 ~ 20시 00분 </br> 토요일 : 09시 00분 ~ 15시 00분 </br> 일요일,공휴일 휴무 </div>',
         latlng: new kakao.maps.LatLng(37.62527555, 127.0259544)
-    }, 
+    },
     {
         content: '<div class="info-title"><h2>강북다모아약국</h2></br>전화번호:02-945-2088</br>주소: 서울특별시 강북구 도봉로 79 (미아동) </br>영업시간</br> 평일: 09시 00분 ~ 19시 00분 </br> 토요일 : 09시 00분 ~ 16시 00분 </br> 일요일,공휴일 휴무</div>',
         latlng: new kakao.maps.LatLng(37.62527555, 127.0295433)
@@ -334,7 +331,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>가산약국</h2></br>전화번호:02-838-1158 </br> 주소:서울특별시 금천구 가산로 116 (가산동) </br> 영업시간</br> 매일: 8시 30분 ~ 22시 00분 </div>',
-        latlng: new kakao.maps.LatLng(37.47608491,126.8931177)
+        latlng: new kakao.maps.LatLng(37.47608491, 126.8931177)
     },
     {
         content: '<div class="info-title"><h2>강남약국</h2></br>전화번호:02-851-1630 </br> 주소:서울특별시 금천구 남부순환로 1372 (독산동, 현경빌딩)</br> 영업시간</br> 평일: 09시 00분 ~ 18시 00분 </br> 주말,공휴일 휴무</div>',
@@ -405,12 +402,12 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.56498215, 127.04384)
     },
     {
-        content: '<div class="info-title"><h2>금빛약국</h2></br>전화번호:02-903-6479</br>주소:서울특별시 도봉구 덕릉로 238, 1층 (창동)</br>영업시간</br>평일: 9시 30분 ~ 20시 30분 </br> 주말: 9시 00분 ~ 17시 30분 </br> 공휴일 휴무 </div>', 
-        latlng: new kakao.maps.LatLng(37.63896291,127.0386565)
+        content: '<div class="info-title"><h2>금빛약국</h2></br>전화번호:02-903-6479</br>주소:서울특별시 도봉구 덕릉로 238, 1층 (창동)</br>영업시간</br>평일: 9시 30분 ~ 20시 30분 </br> 주말: 9시 00분 ~ 17시 30분 </br> 공휴일 휴무 </div>',
+        latlng: new kakao.maps.LatLng(37.63896291, 127.0386565)
     },
     {
         content: '<div class="info-title"><h2>나진약국</h2>/br>전화번호:02-3491-9158</br>주소:서울특별시 도봉구 방학로 223, </br> 101호 (방학동, 사천목씨종친회관) 신동아프라자 101호</br>영업시간</br> 평일,토요일: 09시 00분 ~ 19시 00분</br> 일요일,공휴일 휴무  </div>',
-        latlng: new kakao.maps.LatLng(37.66132042,127.0274993)
+        latlng: new kakao.maps.LatLng(37.66132042, 127.0274993)
     },
     {
         content: '<div class="info-title"><h2>녹십자약국</h2></br>전화번호:02-992-9266 </br> 주소:서울특별시 도봉구 우이천로4길 32,</br> 1층 (창동)</br>영업시간</br>평일: 09시 00분 ~ 21시 00분 </br> 토요일: 09시 00분 ~ 15시 00분 </br> 일요일, 공휴일 휴무 </div>',
@@ -458,7 +455,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>건강한약국</h2></br>전화번호:02-957-9784 </br>주소:서울특별시 동대문구 왕산로32길 7, 4층 6호 (용두동)</br>영업시간</br>평일: 08시 00분 ~ 19시 00분 </br> 토요일: 08시 00분 ~ 15시 00분 </br> 일요일 ,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.57872809, 127.0417966 )
+        latlng: new kakao.maps.LatLng(37.57872809, 127.0417966)
     },
     {
         content: '<div class="info-title"><h2>건수당한약국</h2></br>전화번호:02-966-6835 </br>주소:서울특별시 동대문구 약령중앙로 72-2 (제기동)</br>영업시간</br>평일: 09시 00분 ~ 19시 00분 </br> 토요일: 09시 00분 ~ 17시 00분</br> 일요일 ,공휴일 휴무 </div>',
@@ -482,7 +479,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>강약국</h2></br> 전화번호:02-816-8766 </br> 주소:서울특별시 동작구 서달로 158 (흑석동, 명수대상가104호)</br>영업시간</br>평일,토요일: 09시 00분 ~ 21시 00분 </br> 일요일,공휴일 휴무   </div>',
-        latlng: new kakao.maps.LatLng(37.50727658,  126.9622651)
+        latlng: new kakao.maps.LatLng(37.50727658, 126.9622651)
     },
     {
         content: '<div class="info-title"><h2>건강과행복이열리는중앙메디칼약국</h2></br> 전화번호: 02-811-1700 </br> 주소: 서울특별시 동작구 흑석로 106-5, 1층(흑석동)</br>영업시간</br>평일: 08시 30분~  18시 30분 </br> 토요일:8시 30분~ 13시 30분 </br> 일요일,공휴일 휴무 </div>',
@@ -505,14 +502,14 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.49041934, 126.9706774)
     },
     {
-         content: '<div class="info-title"><h2>고은온누리약국</h2></br>전화번호: 02-303-4290 </br>주소:서울특별시 마포구 월드컵북로 230, 201호 (중동, 현대상가)</br>영업시간</br>평일 9시 30분  ~ 18시 30분 </br> 토요일: 9시 30분 ~ 14시 00분 </br> 일요일,공휴일 휴무   </div>',
+        content: '<div class="info-title"><h2>고은온누리약국</h2></br>전화번호: 02-303-4290 </br>주소:서울특별시 마포구 월드컵북로 230, 201호 (중동, 현대상가)</br>영업시간</br>평일 9시 30분  ~ 18시 30분 </br> 토요일: 9시 30분 ~ 14시 00분 </br> 일요일,공휴일 휴무   </div>',
         latlng: new kakao.maps.LatLng(37.50425495, 126.9223664)
     },
     {
         content: '<div class="info-title"><h2>2층하늘약국</h2></br>전화번호: 02-303-4290, </br> 주소: 서울특별시 마포구 월드컵북로 230, 201호 (중동, 현대상가) 현대상가 201호</br>영업시간</br> 평일: 9시 30분 ~ 18시 00분 </br> 토요일 9시 30분 ~ 14시 00분 </br> 일요일, 공휴일 휴무  </div>',
         latlng: new kakao.maps.LatLng(37.57014047, 126.9038336)
     },
-    { 
+    {
         content: '<div class="info-title"><h2>365열린약국</h2></br> 전화번호:02-6010-2720 </br> 주소:서울특별시 마포구 백범로 199, </br> 메트로디오빌빌딩 108호 (신공덕동)</br>영업시간</br> 매일 8시 30분 ~ 21시 00분  </div>',
         latlng: new kakao.maps.LatLng(37.54350072, 126.9528871)
     },
@@ -542,7 +539,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>공덕오거리약국</h2></br>전화번호:02-711-8411</br> 주소:서울특별시 마포구 새창로 11, 1층 (도화동)</br>영업시간</br>평일: 09시 00분 ~ 21시 00분 </br> 토요일: 09시 00분 ~ 16시 00분 </br> 일요일,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.54246934,126.9513258)
+        latlng: new kakao.maps.LatLng(37.54246934, 126.9513258)
     },
     {
         content: '<div class="info-title"><h2>공덕제일약국</h2></br> 전화번호:02-711-8411 </br> 주소: 서울특별시 마포구 만리재로 15, 제일빌딩 1층 19호 (공덕동)</br>영업시간</br> 평일: 09시 00분 ~ 21시00 분 </br> 토요일: 09시 00분 ~ 16시 00분 </br> 일요일,공휴일 휴무 </div>',
@@ -562,7 +559,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>가좌진약국</h2></br>전화번호:02-372-7749 </br> 주소:서울특별시 서대문구 모래내로 137 1층 (남가좌동)</br>영업시간</br>평일: 09시 00분 ~ 19시 30분 </br> 토요일 09시 00분 ~ 14시 00분</br> 일요일, 공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.56909805,126.9169247)
+        latlng: new kakao.maps.LatLng(37.56909805, 126.9169247)
     },
     {
         content: '<div class="info-title"><h2>강약국</h2></br>전화번호: 02-396-9677 </br> 주소: 서울특별시 서대문구 세검정로1길 7, (홍은동)</br>영업시간</br>평일: 09시 00 분 ~ 19시 00분 </br> 토요일 09시 00분 ~ 14시 00분</br> 일요일, 공휴일 휴무  </div>',
@@ -616,7 +613,7 @@ function getCurrentPosBtn(onClickW){
         content: '<div class="info-title"><h2>강남엘약국</h2></br>전화번호:02-533-7737 </br> 주소:서울특별시 서초구 서초대로77길 9, 강남 누드죤빌딩 104호 (서초동) </br>영업시간</br> 평일:09시 00분 ~ 21시 00분 </br> 토요일: 9시 00분 ~19시 00분 </br> 일요일,공휴일 휴무 </div>',
         latlng: new kakao.maps.LatLng(37.49858942, 127.0262133)
     },
-      {
+    {
         content: '<div class="info-title"><h2>건강과행복이열리는약국</h2></br>전화번호:02-591-3399 </br> 주소: 서울특별시 서초구 서초대로 307  (서초동) </br>영업시간</br> 평일,토요일: 09시 00분 ~ 21시 00분 </br> 일요일,공휴일 휴무 </div>',
         latlng: new kakao.maps.LatLng(37.49440447, 127.0151303)
     },
@@ -630,7 +627,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>21세기메디칼약국</h2></br>전화번호:02-2252-6626 </br> 주소: 서울특별시 성동구 무수막길 97  (금호동2가) </br>영업시간</br> 평일,토요일: 08시 30분 ~ 21시 00분 </br> 일요일,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.55433845,127.0198548)
+        latlng: new kakao.maps.LatLng(37.55433845, 127.0198548)
     },
     {
         content: '<div class="info-title"<h2>건강한약국</h2></br>전화번호:02-2231-8803 주소:서울특별시 성동구 왕십리로 320-1, 1층 (도선동)</br>영업시간</br>평일: 08시 00분 ~20시 00분</br> 토요일 08시 00분 ~ 17시 00분 </br> 일요일,공휴일 휴무 </div>',
@@ -650,7 +647,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>금호프라자약국</h2></br>전화번호:02-2291-5450 </br>주소: 서울특별시 성동구 독서당로 302, 1층 (금호동4가) </br>영업시간</br> 평일: 09시 00분 ~ 21시 00분 </br> 토요일: 09시 00분 ~ 18시 30분  </br> 일요일,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.54761108,127.0227309)
+        latlng: new kakao.maps.LatLng(37.54761108, 127.0227309)
     },
     {
         content: '<div class="info-title"><h2>기린약국</h2></br>전화번호: 02-2299-8850 </br> 주소:서울특별시 성동구 독서당로 173 </br>극동그린상가101-2 </br>영업시간</br> 평일: 8시 30분 ~ 19시 00분 </br> 토요일: 09시 00분 ~ 18시 00분</br> 일요일,공휴일 휴무  </div>',
@@ -658,11 +655,11 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>나무약국</h2></br>전화번호:070-8820-2990 </br>주소: 서울특별시 성동구 금호로 94, </br>금호힐오피스텔 2층 201호 (금호동1가) </br>영업시간</br>평일: 09시 00분 ~  18시 30분 </br> 토요일: 09시 00븐 ~ 14시 30분 </br> 일요일,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.55166451,127.0257031)
+        latlng: new kakao.maps.LatLng(37.55166451, 127.0257031)
     },
     {
         content: '<div class="info-title"><h2>늘푸른약국</h2></br>전화번호:02-6015-0525 </br> 주소:서울특별시 성동구 왕십리로 410, D동 103호 </br> (하왕십리동, 센트라스) </br>영업시간</br> 평일: 09시 00분 ~ 19시 00분</br> 토요일: 09시 00분 ~ 15시 30분 </br> 일요일,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.56659122,127.0240824)
+        latlng: new kakao.maps.LatLng(37.56659122, 127.0240824)
     },
     {
         content: '<div class="info-title"><h2>다나을약국</h2></br>전화번호: 02-2231-1703 </br> 주소: 서울특별시 성동구 장터1길 2 (금호동3가) </br>영업시간</br> 평일: 09시 00분 ~ 23시 00분 </br> 토요일: 09시 00분 ~  18시 30분 </br> 일요일,공휴일 휴무</div>',
@@ -750,7 +747,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>365새누리약국</h2></br> 전화번호:02-2648-1858 </br> 주소:서울특별시 양천구 등촌로 32, 목동태영프라자 102호(목동) </br>영업시간</br> 평일: 09시 00분 ~ 21시 00분 </br>토요일: 08시 00분 ~ 19시 00분</br>일요일,공휴일 휴무</div>',
-        latlng: new kakao.maps.LatLng(37.53288669,126.864165)
+        latlng: new kakao.maps.LatLng(37.53288669, 126.864165)
     },
     {
         content: '<div class="info-title"><h2>가까운온누리약국</h2></br>전화번호:02-2650-8828 </br> 주소: 서울특별시 양천구 목동서로 349, 센트럴프라자 106호 (신정동) </br>영업시간</br> 평일, 토요일: 09시 00분 ~ 21시 00분  </br> 일요일,공휴일 휴무 </div>',
@@ -762,11 +759,11 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>가온온누리약국</h2></br> 전화번호:02-2061-1119 </br> 주소: 서울특별시 양천구 목동동로 293, 현대41타워 1층 38호 (목동) </br>영업시간</br> 평일: 09시 00분 ~ 20시 30분 </br> 토요일:09시 00분 ~ 18시 30분 </br> 일요일,공휴일 휴무  </div>',
-        latlng: new kakao.maps.LatLng(37.52817831,126.875772)
+        latlng: new kakao.maps.LatLng(37.52817831, 126.875772)
     },
     {
         content: '<div class="info-title"><h2>가정약국</h2></br> 전화번호:02-2648-5110 </br> 주소:서울특별시 양천구 목동중앙본로 128-2, 1층 (목동) </br>영업시간</br> 평일: 09시 00분 ~21시 00분 </br> 토요일: 09시 00분 ~ 18시 00분 </br> 일요일,공휴일 휴무 </div>',
-        latlng: new kakao.maps.LatLng(37.54670961,126.8720453)
+        latlng: new kakao.maps.LatLng(37.54670961, 126.8720453)
     },
     {
         content: '<div class="info-title"><h2>강약국</h2></br> 전화번호:02-2698-3027 </br> 주소: 서울특별시 양천구 화곡로 105, (신월동)</br>영업시간</br> 평일 : 09시 00분 ~ 18시 00분</br 토요일: 09시 00분 ~ 13시 00분 </br> 일요일,공휴일 휴무 </div>',
@@ -794,7 +791,7 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>365미소약국</h2> </br> 전화번호: 02-387-1123 </br> 주소: 서울특별시 은평구 진관3로 11, </br> 1층 (진관동, 은평뉴타운 힐데스하임) </br>영업시간</br> 매일: 09시 00분 ~ 21시 00분  </div>',
-        latlng: new kakao.maps.LatLng(37.6394627 ,126.9182694)
+        latlng: new kakao.maps.LatLng(37.6394627, 126.9182694)
     },
     {
         content: '<div class="info-title"><h2>가까운약국 </h2></br> 전화번호: 02-356-9813 </br> 주소:서울특별시 은평구 통일로 738, 1층 3호 (불광동) </br>영업시간</br> 평일: 08시 50분 ~ 23시 00분 </br> 토요일:08시50분 ~ 22시 00분 </br> 일요일,공휴일 휴무 </div>',
@@ -811,7 +808,7 @@ function getCurrentPosBtn(onClickW){
     {
         content: '<div class="info-title"><h2>가람약국</h2></br> 전화번호: 02-351-3200 </br> 주소: 서울특별시 은평구 통일로 1030, </br> 은평헤스티아 1,2층 101, 201호호 (진관동) </br>영업시간</br> 평일: 08시 30분 ~ 18시 30분 </br> 토요일: 08시 00분 ~ 13시 00분 </br> 일요일,공휴일 휴무 </div>',
         latlng: new kakao.maps.LatLng(37.63419225, 126.9176955)
-    }, 
+    },
     {
         content: '<div class="info-title"><h2>가톨릭정문약국</h2></br> 전화번호: 02-389-9846 </br> 주소:서울특별시 은평구 통일로 1031,</br> 1층 102호 (진관동) </br>영업시간</br> 평일: 08시 30분 ~ 18시 30분 </br> 토요일: 08시 30분 ~ 13시 00분</br> 일요일,공휴일 휴무 </div>',
         latlng: new kakao.maps.LatLng(37.63463228, 126.9166433)
@@ -850,11 +847,11 @@ function getCurrentPosBtn(onClickW){
     },
     {
         content: '<div class="info-title"><h2>건강한세상대한약국</h2></br>전화번호:02-786-1091 </br> 주소: 서울특별시 영등포구 국제금융로 108 (여의도동,은하빌딩 1층) </br>영업시간</br>평일: 09시 00분 ~ 19시 00분 </br>토요일: 08시 30분 ~ 13시 30분  </br> 일요일,공휴일 휴무  </div>',
-        latlng: new kakao.maps.LatLng(37.51871387,126.933541)
+        latlng: new kakao.maps.LatLng(37.51871387, 126.933541)
     },
     {
         content: '<div class="info-title"><h2>경도약국</h2></br>전화번호: 02-780-5004 </br> 주소:서울특별시 영등포구 여의대방로 383 </br>영업시간</br> 월,수,금: 09시 00분 ~ 19시 00분 화,목: 09시 00분 ~ 19시 00분 </br> 토요일: 09시 00분 ~ 14시 00분 </br> 일요일,공휴일 휴무  </div>',
-        latlng: new kakao.maps.LatLng(37.51934744,126.9315197)
+        latlng: new kakao.maps.LatLng(37.51934744, 126.9315197)
     },
     {
         content: '<div class="info-title"><h2>경명약국</h2></br>전화번호:02-2634-1046 </br> 주소:서울특별시 영등포구 선유서로25길 5-1, (양평동2가) </br>영업시간</br> 평일,토요일: 07시 00분 ~ 21시 00분  </br> 일요일,공휴일 휴무 </div>',
@@ -1040,70 +1037,70 @@ function getCurrentPosBtn(onClickW){
         latlng: new kakao.maps.LatLng(37.58865522, 127.0877817)
     },
 
-  ];    
- 
- for (var i = 0; i < positions.length; i ++) {
-// 마커를 생성합니다
+];
 
-var marker = new kakao.maps.Marker({
- map: map, // 마커를 표시할 지도
- position: positions[i].latlng // 마커의 위치
-});
+for (var i = 0; i < positions.length; i++) {
+    // 마커를 생성합니다
 
-// 마커에 표시할 인포윈도우를 생성합니다 
-var infowindow = new kakao.maps.InfoWindow({
- content: positions[i].content // 인포윈도우에 표시할 내용
-});
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng // 마커의 위치
+    });
 
-// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-// 이벤트 리스너로는 클로저를 만들어 등록합니다 
-// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+    // 마커에 표시할 인포윈도우를 생성합니다 
+    var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+    });
+
+    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
 }
 
 // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
 function makeOverListener(map, marker, infowindow) {
-return function() {
- infowindow.open(map, marker);
-};
+    return function() {
+        infowindow.open(map, marker);
+    };
 }
 
 // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
 function makeOutListener(infowindow) {
-return function() {
- infowindow.close();
-};
+    return function() {
+        infowindow.close();
+    };
 }
-for (var i = 0; i < positions.length; i ++) {
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
- map: map, // 마커를 표시할 지도
- position: positions[i].latlng // 마커의 위치
-});
+for (var i = 0; i < positions.length; i++) {
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng // 마커의 위치
+    });
 
-// 마커에 표시할 인포윈도우를 생성합니다  여기에 영업시간이나 그런 내용 추가 하면 될듯
-//쫌있다 커스텀 오버레이도 알아보기 
-var infowindow = new kakao.maps.InfoWindow({
- content: positions[i].content // 인포윈도우에 표시할 내용
-});
+    // 마커에 표시할 인포윈도우를 생성합니다  여기에 영업시간이나 그런 내용 추가 하면 될듯
+    //쫌있다 커스텀 오버레이도 알아보기 
+    var infowindow = new kakao.maps.InfoWindow({
+        content: positions[i].content // 인포윈도우에 표시할 내용
+    });
 
-(function(marker, infowindow) {
- // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
- kakao.maps.event.addListener(marker, 'mouseover', function() {
-     infowindow.open(map, marker);
- });
+    (function(marker, infowindow) {
+        // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
+        kakao.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.open(map, marker);
+        });
 
- // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
- kakao.maps.event.addListener(marker, 'mouseout', function() {
-     infowindow.close();
- });
-})(marker, infowindow);
+        // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
+        kakao.maps.event.addListener(marker, 'mouseout', function() {
+            infowindow.close();
+        });
+    })(marker, infowindow);
 }
 
-function locationLoadSuccess(pos){
+function locationLoadSuccess(pos) {
     // 현재 위치 받아오기
-    var currentPos = new kakao.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
+    var currentPos = new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
 
     // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
     map.panTo(currentPos);
@@ -1118,13 +1115,13 @@ function locationLoadSuccess(pos){
     marker.setMap(map);
 };
 
-function locationLoadError(pos){
+function locationLoadError(pos) {
     alert('위치 정보를 가져오는데 실패했습니다.');
 };
 
 // 위치 가져오기 버튼 클릭시
-function getCurrentPosBtn(){
-    navigator.geolocation.getCurrentPosition(locationLoadSuccess,locationLoadError);
+function getCurrentPosBtn() {
+    navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
 };
 
 
@@ -1135,11 +1132,11 @@ function getCurrentPosBtn(){
 var infoTitle = document.querySelectorAll('.info-title');
 infoTitle.forEach(function(e) {
     var w = e.offsetWidth + 10;
-    var ml = w/2;
+    var ml = w / 2;
     e.parentElement.style.top = "82px";
     e.parentElement.style.left = "50%";
-    e.parentElement.style.marginLeft = -ml+"px";
-    e.parentElement.style.width = w+"px";
+    e.parentElement.style.marginLeft = -ml + "px";
+    e.parentElement.style.width = w + "px";
     e.parentElement.previousSibling.style.display = "none";
     e.parentElement.parentElement.style.border = "0px";
     e.parentElement.parentElement.style.background = "unset";

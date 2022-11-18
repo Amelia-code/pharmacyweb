@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <meta charset="utf-8">
-    <head>
-    <!-- <link rel="icon" href="img/drugstore.png"> -->
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bfaa4aa1bf194fc7519ad297815a70fb"> </script>
-    <script type="text/javascript" defer src="js/main.js"></script>
+<meta charset="utf-8">
+
+<head>
+    <meta charset="uft-8">
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bfaa4aa1bf194fc7519ad297815a70fb&libraries=services,clusterer,drawing">
+    </script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" defer src="sebindex.js"></script>
     <script type="text/javascript" defer src="js/index.js"></script>
+
 
     <link rel="shortcut icon" type="image/x-icon" href="img/pharmacy.ico">
     <link href="css/style.css" rel="stylesheet">
     <title> 서울특별시 약국 보기 </title>
-    </head>
-    <body style="overflow-x:hidden; overflow-y:auto;">
-        
-        <div id = "wrap">
-         <header>
-            <div id = "top_area">
+</head>
+
+<body style="overflow-x:hidden; overflow-y:auto;">
+
+    <div id="wrap">
+        <header>
+            <div id="top_area">
                 <h1><a href="index.html">
                     서울특별시 약국 지도
-                    </a> 
+                    </a>
                 </h1>
-                
-            
+
+
 
             </div>
             <nav>
                 <ul>
                     <li>
-                        <a href ="#"> 약국지도 </a>
-                        
+                        <a href="#"> 약국지도 </a>
+
                     </li>
-                
-                
+
+
                     <li>
-                        <a href ="#"> 약국지도소개 </a>
-                        
+                        <a href="#"> 약국지도소개 </a>
+
                     </li>
-                
-            
+
+
                     <li>
-                        <a href ="#"> 1:1문의 </a>
-                       
+                        <a href="#"> 1:1문의 </a>
+
                     </li>
-                
-                
+
+
                     <li>
-                        <a href ="#"> contacts  </a>
-                       
-                            
-                    
+                        <a href="#"> contacts  </a>
+
+
+
                     </li>
                 </ul>
             </nav>
-         </header>
+        </header>
 
-         <article id ="apiweb">
-                <div class="time"> 현재시간은?</div>
-                <div class="recode">
-                    <h1 id="clock"> 00: 00: 00</h1>
-                
-                </div>
-                <button type ="button" class="btn" onclick="getCurrentPosBtn()" style='cursor:pointer'> 내 위치 불러오기 </button>
-                </article>
+        <article id="apiweb">
+            <div class="time"> 현재시간은?</div>
+            <div class="recode">
+                <h1 id="clock"> 00: 00: 00</h1>
 
-            <footer>
-            
-            </footer>
-         </div>
-        <div id="map" > </div>
- 
-     </body>  
+            </div>
+            <button type="button" class="btn" onclick="getCurrentPosBtn()" style='cursor:pointer'> 내 위치 불러오기 </button>
+        </article>
+
+        <footer>
+
+        </footer>
+    </div>
+    <div id="map"> </div>
+
+</body>
+
 </html>
