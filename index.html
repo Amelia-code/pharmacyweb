@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 
 <head>
-
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bfaa4aa1bf194fc7519ad297815a70fb&libraries=clusterer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/77e29b57dd.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d693659408f8dc09dd9a6395392b68fa&libraries=services,clusterer,drawing">
     </script>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
     </script>
     <script type="text/javascript" defer src="sebindex.js"></script>
     <script type="text/javascript" defer src="index.js"></script>
@@ -18,48 +18,29 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="img/pharmacy.ico">
     <link href="css/style.css" rel="stylesheet">
-    <title> 서울특별시 약국 보기 </title>
+    <title> 서울특별시 약국 정보 </title>
 </head>
 
 <body style="overflow-x:hidden; overflow-y:auto;">
 
     <div id="wrap">
         <header>
-            <div id="top_area">
-                <h1><a href="index.html">
-                    서울특별시 약국 지도
-                    </a>
-                </h1>
+
+            <nav class="navbar">
+
+                <div class="navbar-logo">
 
 
+                    <a href="">서울특별시 약국 정보</a>
 
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#"> 약국지도 </a>
-
-                    </li>
-
-
-                    <li>
-                        <a href="#"> 약국지도소개 </a>
-
-                    </li>
-
-
-                    <li>
-                        <a href="#"> 1:1문의 </a>
-
-                    </li>
-
-
-                    <li>
-                        <a href="#"> contacts  </a>
-
-
-
-                    </li>
+                </div>
+                <!-- menu -->
+                <ul class="navbar-menu">
+                    <li><a href="">약국홈페이지소개</a></li>
+                    <li><a href="">약국정보</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">1:1문의</a></li>
+                    <li><a href="">응급처치방법</a></li>
                 </ul>
             </nav>
         </header>
@@ -70,14 +51,31 @@
                 <h1 id="clock"> 00: 00: 00</h1>
 
             </div>
-            <button type="button" class="btn" onclick="getCurrentPosBtn()" style='cursor:pointer'> 내 위치 불러오기 </button>
+
         </article>
 
         <footer>
 
         </footer>
     </div>
-    <div id="map"> </div>
+    <div class="map_wrap">
+        <div id="map" style="width:100%;height:120%;position:relative;overflow:hidden;"></div>
+
+        <div id="menu_wrap" class="bg_white">
+            <div class="option ">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="약국정보" id="keyword" size="15">
+                        <button type="submit">검색하기</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>
+    </div>
+
 
 </body>
 
