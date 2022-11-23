@@ -20,7 +20,7 @@ function locationLoadError(pos) {
 };
 
 // 위치 가져오기 버튼 클릭시
-function getCurrentPosBtn(onClickW) {
+function getCurrentPosBtn(onClick) {
     navigator.geolocation.getCurrentPosition(locationLoadSuccess, locationLoadError);
 };
 
